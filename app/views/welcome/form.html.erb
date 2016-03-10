@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My wishlist</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="nav">
+				<h1><strong><a href="/welcome/index.html">homies Secret Santa </a></strong> 2015</h1>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style3 special">
+				<div class="container">
+					<header class="major special">
+						<h2><%= current_user.name %>'s Wishlist</h2>
+						<p>(let's keep it under $20)</p>
+					</header>
+
+
+					<!-- Form -->
+						<section>
+							<!--form method="post" action="#"-->
+							<form method="post" action="/users/<%= current_user.id %>"
+								<div class="row uniform 50%">
+									<div class="12u$">
+										<!--%= form.text_area(:wishlist, cols:30, rows:6, placeholder:@wishlist )%-->
+										<textarea name="wishlist" id="wishlist" rows="6"> <%= @wishlist%> </textarea>
+									</div>
+									<div class="12u$">
+										<ul class="actions">
+											<!--li> <%= form.submit "Send to Santa's Workshop", id: "button", class: "special", name: "submit" %-->
+											<li><input type="submit" value="Send to Santa's Workshop" class="special" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
+
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; da#1homies</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
